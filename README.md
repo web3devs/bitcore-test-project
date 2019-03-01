@@ -1,0 +1,1 @@
+# bitcore-test-project
