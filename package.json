@@ -1,0 +1,43 @@
+{
+  "name": "bitcore-test-project",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/insideoutzombie/bitcore-test-project.git",
+  "author": "insideoutzombie <david@web3devs.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run clean && npm run build-babel && cp src/emails/*.hbs dist/emails/",
+    "build-babel": "babel src -d dist",
+    "clean": "rm -rf dist && mkdir dist",
+    "dev": "nodemon src/app.js --exec babel-node",
+    "lint": "eslint --debug src/",
+    "lint:write": "eslint --debug src/ --fix",
+    "prettier": "prettier --write src/**/*.js",
+    "start": "nodemon src/app.js",
+    "test": "node Test-Playground/test.js",
+    "test:api": "mocha --require babel-register ./test_api/*.js"
+  },
+  "dependencies": {
+    "async": "^2.6.2",
+    "bclient": "^0.1.6",
+    "bcoin": "^1.0.2",
+    "bitcoin-cli": "^0.0.3",
+    "bitcoin-core": "^2.0.0",
+    "bitcore-explorers": "^1.0.1",
+    "bitcore-lib": "^8.1.0",
+    "chalk": "^2.4.2",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "firebase": "^5.9.2",
+    "geth": "^0.4.0",
+    "litecoin": "^2.0.5",
+    "mongodb": "^3.1.13",
+    "mongoose": "^5.4.17",
+    "node-cmd": "^3.0.0",
+    "node-gyp": "^3.8.0",
+    "nodemon": "^1.18.10",
+    "rebuild": "^0.1.2",
+    "superagent": "^4.1.0"
+  }
+}
